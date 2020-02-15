@@ -1,0 +1,8 @@
+
+.vs
+CitiesAPI/App_Data
+CitiesAPI/bin
+CitiesAPI/obj
+Properties/bin
+Properties/obj
+packages
