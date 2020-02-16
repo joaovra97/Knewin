@@ -37,7 +37,8 @@ namespace CoonsoleAlgorithms.Algorithms
 		public void RetryOrExit()
 		{
 			Console.WriteLine("Tentar novamente? (y/n)");
-			var retry = Console.ReadLine() == "y";
+			var retry = Console.ReadKey().KeyChar == 'y';
+			Console.WriteLine();
 
 			if (retry)
 				Begin();

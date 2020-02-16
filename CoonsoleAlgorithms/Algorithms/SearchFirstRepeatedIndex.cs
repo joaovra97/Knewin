@@ -48,7 +48,10 @@ namespace CoonsoleAlgorithms.Algorithms
 				if (!auxList.Any(n => n == num))
 					auxList.Add(num);
 				else
+				{
 					_resultIndex = _numberList.FindIndex(n => n == num);
+					break;
+				}
 			}
 
 			_success = _resultIndex != -1;
@@ -58,7 +61,7 @@ namespace CoonsoleAlgorithms.Algorithms
 		{
 			if (_success)
 			{
-				Console.WriteLine($"Índice do primeiro item duplicado: {_resultIndex}");
+				Console.WriteLine($"Índice do primeiro item duplicado: {_resultIndex} ({_resultIndex+1}º posição)");
 				Console.WriteLine($"Valor: {_numberList.ElementAt(_resultIndex)}");
 			}
 			else
