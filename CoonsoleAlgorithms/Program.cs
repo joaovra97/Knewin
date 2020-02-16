@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoonsoleAlgorithms.Algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace CoonsoleAlgorithms
 	{
 		static void Main(string[] args)
 		{
+			var alg = new SearchFirstRepeatedIndex();
+			alg.Begin();
 		}
 	}
 }
