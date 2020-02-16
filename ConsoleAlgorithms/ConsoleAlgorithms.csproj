@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="fonts\larry3d.flf" />
+    <None Include="fonts\mini.flf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
