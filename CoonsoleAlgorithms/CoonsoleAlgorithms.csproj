@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\IAlgorithm.cs" />
+    <Compile Include="Algorithms\ConfirmPalindrome.cs" />
+    <Compile Include="Algorithms\Algorithm.cs" />
     <Compile Include="Algorithms\SearchFirstRepeatedIndex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

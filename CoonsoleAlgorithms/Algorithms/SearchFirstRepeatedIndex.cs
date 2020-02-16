@@ -69,6 +69,7 @@ namespace CoonsoleAlgorithms.Algorithms
 		{
 			_numberList = new List<int>();
 			_resultIndex = -1;
+			_success = false;
 		}
 	}
 }
