@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Colorful;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace CoonsoleAlgorithms.Algorithms
 {
 	public class SearchFirstRepeatedIndex : Algorithm
 	{
+		public static FigletFont _font = FigletFont.Load("../../fonts/mini.flf");
+		public static Figlet _figlet = new Figlet(_font);
 
 		private List<int> _numberList { get; set; }
 		private int _resultIndex { get; set; }
@@ -16,14 +20,21 @@ namespace CoonsoleAlgorithms.Algorithms
 			CleanInput();
 		}
 
-		public override void Begin()
+		public override void Begin(bool onlyMessage = false)
 		{
-			Console.WriteLine("Bem vindo ao buscador de números repetidos!");
+			Console.Clear();
+			Console.WriteLine(_figlet.ToAscii("Buscador de Numeros"), ColorTranslator.FromHtml("#ffa500"));
+			Console.WriteLine(_figlet.ToAscii("Repetidos"), ColorTranslator.FromHtml("#ffa500"));
+			Console.WriteLine("Bem vindo ao buscador de números repetidos!", Color.PeachPuff);
 			ReadData("Insira uma sequência de números inteiros separados por vírgulas: ");
-			ProcessInput();
-			Execute();
-			ShowResult();
-			RetryOrExit();
+			
+			if (!onlyMessage)
+			{
+				ProcessInput();
+				Execute();
+				ShowResult();
+				RetryOrExit();
+			}
 		}
 
 		public override void ProcessInput()
@@ -33,9 +44,9 @@ namespace CoonsoleAlgorithms.Algorithms
 				var inputList = Regex.Replace(_input, @"\s+", "").Split(',').ToList();
 				_numberList = inputList.Select(int.Parse).ToList();
 			}
-			catch(Exception e)
+			catch
 			{
-				ErroOnProcessInput("Erro ao processar Lista!");
+				ErroOnProcessInput("Erro ao processar Lista! Insira uma sequência válida de números inteiros!");
 			}
 
 		}
@@ -59,13 +70,17 @@ namespace CoonsoleAlgorithms.Algorithms
 
 		public override void ShowResult()
 		{
+			Console.WriteLine();
 			if (_success)
 			{
-				Console.WriteLine($"Índice do primeiro item duplicado: {_resultIndex} ({_resultIndex+1}º posição)");
-				Console.WriteLine($"Valor: {_numberList.ElementAt(_resultIndex)}");
+				Console.WriteLine($"Índice do primeiro item duplicado: {_resultIndex} ({_resultIndex+1}º posição)", Color.LightGreen);
+				Console.WriteLine($"Valor: {_numberList.ElementAt(_resultIndex)}", Color.LightGreen);
 			}
 			else
-				Console.WriteLine("Nenhum item duplicado encontrado!");			
+				Console.WriteLine("Nenhum item duplicado encontrado!", Color.Red);
+
+			Console.WriteLine("", Color.White);
+			CleanInput();
 		}
 
 		public override void CleanInput()

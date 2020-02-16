@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace CoonsoleAlgorithms.Algorithms
 {
@@ -11,7 +13,7 @@ namespace CoonsoleAlgorithms.Algorithms
 		#endregion
 
 		#region abstract functions
-		public abstract void Begin();
+		public abstract void Begin(bool onlyMessage = false);
 		public abstract void ProcessInput();
 		public abstract void Execute();
 		public abstract void ShowResult();
@@ -29,14 +31,17 @@ namespace CoonsoleAlgorithms.Algorithms
 		public void ErroOnProcessInput(string message)
 		{
 			CleanInput();
-			Console.WriteLine(message);
-			ReadData(_readDataMessage);
+			Console.WriteLine();
+			Console.WriteLine(message, Color.Red);
+			Console.WriteLine("Pressione qualquer botão para continuar...", Color.Gray);
+			Console.ReadKey();
+			Begin(onlyMessage: true);
 			ProcessInput();
 		}		
 
 		public void RetryOrExit()
 		{
-			Console.WriteLine("Tentar novamente? (y/n)");
+			Console.WriteLine("Tentar novamente? (y/n)", Color.Gray);
 			var retry = Console.ReadKey().KeyChar == 'y';
 			Console.WriteLine();
 
