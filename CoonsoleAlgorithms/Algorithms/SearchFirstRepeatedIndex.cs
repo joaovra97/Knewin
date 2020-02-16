@@ -5,41 +5,28 @@ using System.Text.RegularExpressions;
 
 namespace CoonsoleAlgorithms.Algorithms
 {
-	public class SearchFirstRepeatedIndex : IAlgorithm
+	public class SearchFirstRepeatedIndex : Algorithm
 	{
 
-		private string _input { get; set; }
-
-		private bool _success { get; set; }
-
-
 		private List<int> _numberList { get; set; }
-
 		private int _resultIndex { get; set; }
 
 		public SearchFirstRepeatedIndex()
 		{
-			_numberList = new List<int>();
-			_resultIndex = -1;
+			CleanInput();
 		}
 
-		public void Begin()
+		public override void Begin()
 		{
 			Console.WriteLine("Bem vindo ao buscador de números repetidos!");
-			ReadData();
+			ReadData("Insira uma sequência de números inteiros separados por vírgulas: ");
 			ProcessInput();
 			Execute();
 			ShowResult();
 			RetryOrExit();
 		}
 
-		public void ReadData()
-		{
-			Console.WriteLine("Insira uma sequência de números inteiros separados por vírgulas: ");
-			_input = Console.ReadLine();
-		}
-
-		public void ProcessInput()
+		public override void ProcessInput()
 		{
 			try
 			{
@@ -48,20 +35,12 @@ namespace CoonsoleAlgorithms.Algorithms
 			}
 			catch(Exception e)
 			{
-				ErroOnProcessInput();
+				ErroOnProcessInput("Erro ao processar Lista!");
 			}
 
 		}
 
-		public void ErroOnProcessInput()
-		{
-			_numberList = new List<int>();
-			Console.WriteLine("Erro ao processar Lista!");
-			ReadData();
-			ProcessInput();
-		}
-
-		public void Execute()
+		public override void Execute()
 		{
 			var auxList = new List<int>();
 			foreach(int num in _numberList)
@@ -75,7 +54,7 @@ namespace CoonsoleAlgorithms.Algorithms
 			_success = _resultIndex != -1;
 		}
 
-		public void ShowResult()
+		public override void ShowResult()
 		{
 			if (_success)
 			{
@@ -86,13 +65,10 @@ namespace CoonsoleAlgorithms.Algorithms
 				Console.WriteLine("Nenhum item duplicado encontrado!");			
 		}
 
-		public void RetryOrExit()
+		public override void CleanInput()
 		{
-			Console.WriteLine("Tentar novamente? (y/n)");
-			var retry = Console.ReadLine() == "y";
-
-			if (retry)
-				Begin();
+			_numberList = new List<int>();
+			_resultIndex = -1;
 		}
 	}
 }
