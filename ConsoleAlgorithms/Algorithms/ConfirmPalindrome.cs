@@ -24,6 +24,7 @@ namespace CoonsoleAlgorithms.Algorithms
 			Console.Clear();
 			Console.WriteLine(_figlet.ToAscii("Verificador de Palindromos"), ColorTranslator.FromHtml("#0000ff"));
 			Console.WriteLine("Bem vindo ao verificador de palíndromos!", Color.SkyBlue);
+			Console.WriteLine("Um palíndromo é uma frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa", Color.SkyBlue);
 			ReadData("Insira uma string: ");
 
 			if (!onlyMessage)

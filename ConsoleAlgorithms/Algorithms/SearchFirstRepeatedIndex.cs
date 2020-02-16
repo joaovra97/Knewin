@@ -26,7 +26,7 @@ namespace CoonsoleAlgorithms.Algorithms
 			Console.WriteLine(_figlet.ToAscii("Buscador de Numeros"), ColorTranslator.FromHtml("#ffa500"));
 			Console.WriteLine(_figlet.ToAscii("Repetidos"), ColorTranslator.FromHtml("#ffa500"));
 			Console.WriteLine("Bem vindo ao buscador de números repetidos!", Color.PeachPuff);
-			ReadData("Insira uma sequência de números inteiros separados por vírgulas: ");
+			ReadData("Insira uma sequência de números inteiros, de -2147483647 a 2147483647, separados por vírgulas: ");
 			
 			if (!onlyMessage)
 			{
