@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAlgorithms", "ConsoleAlgorithms\ConsoleAlgorithms.csproj", "{ED6BCB2D-C290-401E-ACC3-99D87A8274F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiesAPI", "CitiesAPI\CitiesAPI.csproj", "{75E7C206-7D79-4C94-BD32-1A9AECADD9E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiesAPI", "CitiesAPI\CitiesAPI.csproj", "{2070944A-8D58-41AD-9ED7-C9C229E87320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{ED6BCB2D-C290-401E-ACC3-99D87A8274F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED6BCB2D-C290-401E-ACC3-99D87A8274F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED6BCB2D-C290-401E-ACC3-99D87A8274F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75E7C206-7D79-4C94-BD32-1A9AECADD9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75E7C206-7D79-4C94-BD32-1A9AECADD9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75E7C206-7D79-4C94-BD32-1A9AECADD9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75E7C206-7D79-4C94-BD32-1A9AECADD9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2070944A-8D58-41AD-9ED7-C9C229E87320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2070944A-8D58-41AD-9ED7-C9C229E87320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2070944A-8D58-41AD-9ED7-C9C229E87320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2070944A-8D58-41AD-9ED7-C9C229E87320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
