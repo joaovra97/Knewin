@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CitiesAPI.Models;
 using CitiesAPI.Migration;
+using CitiesAPI.Helpers;
 
 namespace CitiesAPI.Controllers
 {
@@ -43,15 +43,46 @@ namespace CitiesAPI.Controllers
         [HttpGet("getbyname/{name}")]
         public ActionResult<IEnumerable<City>> GetCityByName(string name)
         {
-            var city = _context.Cities.
+            var cities = _context.Cities.
                 Where(e => e.Name.ToLower().Contains(name.ToLower())).ToList();
 
-            if (city == null || !city.Any())
+            if (cities == null || !cities.Any())
             {
                 return NotFound();
             }
 
-            return city;
+            return cities;
+        }
+
+        [HttpGet("getbybordername/{name}")]
+        public ActionResult<IEnumerable<City>> GetCityByBorderName(string name)
+        {
+            var cities = _context.Cities.ToList().
+                Where(e => e.Borders.Any(b => b.ToLower().Contains(name.ToLower()))).
+                ToList();
+
+            if (cities == null || !cities.Any())
+            {
+                return NotFound();
+            }
+
+            return cities;
+        }
+
+        [HttpGet("gettotaldata")]
+        public ActionResult<TotalData> GetTotalData()
+        {
+            var cities = _context.Cities.ToList();
+
+            if (cities == null || !cities.Any())
+            {
+                return NotFound();
+            }
+
+            var totalPopulation = cities.Sum(c => c.Population);
+            var citiesCount = cities.Count;
+
+            return new TotalData() { TotalPopulation = totalPopulation, CitiesCount = citiesCount };
         }
 
         [HttpPut("{id}")]
