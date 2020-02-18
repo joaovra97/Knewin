@@ -9,6 +9,6 @@
 
 - "CitiesAPI" é uma API feita com ASP.NET Core. Todas suas rotas e como consumir os métodos foram documentos utilzando Swagger. Não é necessário rodar nenhum script. Foi utilizando banco em memória para rodar a aplicação. A carga inicial é inserida automaticamente na sua inicialização.
 
-![alt](https://imgur.com/RF5J8mH)
+![alt](https://i.imgur.com/RF5J8mH.png)
 
 **Obrigado!**
